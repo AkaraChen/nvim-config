@@ -1,0 +1,12 @@
+{
+  "name": "nvim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "fmt": "stylua ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
