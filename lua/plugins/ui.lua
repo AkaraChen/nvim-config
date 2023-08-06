@@ -261,7 +261,16 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		config = function()
-			require("bufferline").setup({})
+			require("bufferline").setup({
+				options = {
+					offsets = {
+						{
+							filetype = "neo-tree",
+							text = "File Explorer",
+						},
+					},
+				},
+			})
 		end,
 	},
 	{
@@ -326,7 +335,6 @@ return {
 					"dashboard",
 					"packer",
 					"neogitstatus",
-					"NvimTree",
 					"Trouble",
 					"alpha",
 					"lir",
