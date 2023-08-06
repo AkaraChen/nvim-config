@@ -1,12 +1,12 @@
-local lsp = require('lspconfig')
+local lsp = require("lspconfig")
 lsp.lua_ls.setup({
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = {'vim'},
-            },
-        },
-    },
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
 })
 
 print("hello")

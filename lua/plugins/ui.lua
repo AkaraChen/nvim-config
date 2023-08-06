@@ -100,6 +100,9 @@ return {
 					lualine_c = {},
 					lualine_x = {},
 				},
+				extensions = {
+					"neo-tree",
+				},
 			}
 
 			-- Inserts a component in lualine_c at left section
@@ -293,47 +296,47 @@ return {
 		config = function()
 			require("scrollview").setup({})
 		end,
-    },
-    -- Breadcrumbs
-    {
-        "fgheng/winbar.nvim",
-		config = function ()
-			require('winbar').setup({
+	},
+	-- Breadcrumbs
+	{
+		"fgheng/winbar.nvim",
+		config = function()
+			require("winbar").setup({
 				enabled = true,
 
 				show_file_path = true,
 				show_symbols = true,
 
 				colors = {
-					path = '', -- You can customize colors like #c946fd
-					file_name = '',
-					symbols = '',
+					path = "", -- You can customize colors like #c946fd
+					file_name = "",
+					symbols = "",
 				},
 
 				icons = {
-					file_icon_default = '',
-					seperator = '>',
-					editor_state = '●',
-					lock_icon = '',
+					file_icon_default = "",
+					seperator = ">",
+					editor_state = "●",
+					lock_icon = "",
 				},
 
 				exclude_filetype = {
-					'help',
-					'startify',
-					'dashboard',
-					'packer',
-					'neogitstatus',
-					'NvimTree',
-					'Trouble',
-					'alpha',
-					'lir',
-					'Outline',
-					'spectre_panel',
-					'toggleterm',
-                    'qf',
-					'neo-tree'
-				}
+					"help",
+					"startify",
+					"dashboard",
+					"packer",
+					"neogitstatus",
+					"NvimTree",
+					"Trouble",
+					"alpha",
+					"lir",
+					"Outline",
+					"spectre_panel",
+					"toggleterm",
+					"qf",
+					"neo-tree",
+				},
 			})
-		end
-	}
+		end,
+	},
 }
