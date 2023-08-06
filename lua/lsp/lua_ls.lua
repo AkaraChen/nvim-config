@@ -8,5 +8,3 @@ lsp.lua_ls.setup({
 		},
 	},
 })
-
-print("hello")
