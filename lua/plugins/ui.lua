@@ -106,7 +106,8 @@ return {
 					lualine_x = {},
 				},
 				extensions = {
-					"neo-tree",
+                    "neo-tree",
+					"trouble"
 				},
 			}
 
@@ -365,5 +366,15 @@ return {
 		config = function()
 			require("alpha").setup(require("alpha.themes.dashboard").config)
 		end,
-	},
+    },
+    {
+		"folke/trouble.nvim"
+    },
+		{
+			"folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+			config = function ()
+				require("todo-comments").setup({})
+			end
+		}
 }
