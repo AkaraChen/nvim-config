@@ -9,4 +9,7 @@ return {
 			{ "hrsh7th/cmp-path" },
 		},
 	},
+	{
+		"github/copilot.vim"
+	},
 }
