@@ -85,4 +85,10 @@ return {
 			"hrsh7th/nvim-cmp",
 		},
 	},
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
 }
