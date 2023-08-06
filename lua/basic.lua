@@ -1,6 +1,6 @@
 -- Use UTF-8
-vim.g.encoding = "UTF-8"
-vim.g.fileencoding = "utf-8"
+vim.g.encoding = 'UTF-8'
+vim.g.fileencoding = 'utf-8'
 
 -- Retain 8 lines above and below the cursor when moving
 vim.o.scrolloff = 8
@@ -28,4 +28,4 @@ vim.o.wrap = false
 vim.wo.wrap = false
 
 -- Allow Jump to next line when in end of line
-vim.o.whichwrap = "b,s,<,>,[,],h,l"
+vim.o.whichwrap = 'b,s,<,>,[,],h,l'

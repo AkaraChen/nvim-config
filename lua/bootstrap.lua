@@ -1,2 +1,2 @@
 -- Setup LSP
-require("lsp.main")
+require 'lsp.main'

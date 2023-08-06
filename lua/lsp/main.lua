@@ -1,8 +1,8 @@
-require("lsp.css")
-require("lsp.html")
-require("lsp.rust")
-require("lsp.ts")
-require("lsp.vue")
-require("lsp.lua_ls")
-require("lsp.json")
-require("lsp.tailwind")
+require 'lsp.css'
+require 'lsp.html'
+require 'lsp.rust'
+require 'lsp.ts'
+require 'lsp.vue'
+require 'lsp.lua_ls'
+require 'lsp.json'
+require 'lsp.tailwind'
