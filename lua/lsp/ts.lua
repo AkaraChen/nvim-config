@@ -1,2 +1,1 @@
-local lspconfig = require("lspconfig")
-lspconfig.tsserver.setup({})
+require("lspconfig").tsserver.setup({})

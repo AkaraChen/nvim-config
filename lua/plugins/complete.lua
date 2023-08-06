@@ -91,4 +91,7 @@ return {
 			require("Comment").setup()
 		end,
 	},
+	{
+		"b0o/SchemaStore.nvim",
+	},
 }

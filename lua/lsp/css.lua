@@ -1,2 +1,1 @@
-local lspconfig = require("lspconfig")
-lspconfig.cssls.setup({})
+require("lspconfig").cssls.setup({})

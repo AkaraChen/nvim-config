@@ -1,2 +1,1 @@
-local lspconfig = require("lspconfig")
-lspconfig.rust_analyzer.setup({})
+require("lspconfig").rust_analyzer.setup({})

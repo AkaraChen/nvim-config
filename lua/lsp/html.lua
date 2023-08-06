@@ -1,2 +1,1 @@
-local lspconfig = require("lspconfig")
-lspconfig.html.setup({})
+require("lspconfig").html.setup({})
