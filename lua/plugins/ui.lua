@@ -371,11 +371,11 @@ return {
 		"folke/trouble.nvim",
 	},
 	{
-        "folke/todo-comments.nvim",
+		"folke/todo-comments.nvim",
 		event = "BufRead",
 		dependencies = { "nvim-lua/plenary.nvim", "folke/trouble.nvim" },
 		config = function()
-            require("todo-comments").setup({})
+			require("todo-comments").setup({})
 			-- Setup Trouble
 			vim.cmd("TodoTrouble")
 			vim.cmd("TroubleClose")
