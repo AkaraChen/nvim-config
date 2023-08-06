@@ -353,4 +353,8 @@ return {
 			})
 		end,
 	},
+	-- Indent guide
+	{
+		"lukas-reineke/indent-blankline.nvim"
+	}
 }
