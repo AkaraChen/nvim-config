@@ -23,10 +23,10 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
 		config = function()
-            require("neo-tree").setup({
-                filesystem = {
-					use_libuv_file_watcher = true
-				}
+			require("neo-tree").setup({
+				filesystem = {
+					use_libuv_file_watcher = true,
+				},
 			})
 			vim.cmd("Neotree")
 		end,
