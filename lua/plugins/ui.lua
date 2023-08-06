@@ -271,7 +271,7 @@ return {
 					offsets = {
 						{
 							filetype = "neo-tree",
-							text = "File Explorer",
+							text = "󰈔 File",
 							highlight = "Directory",
 						},
 					},
