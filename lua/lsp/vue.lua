@@ -1,2 +1,2 @@
 local lsp = require 'lspconfig'
-lsp.vuels.setup {}
+lsp.volar.setup {}
