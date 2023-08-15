@@ -1,1 +1,1 @@
-require("lspconfig").dartls.setup {}
+require('lspconfig').dartls.setup {}
