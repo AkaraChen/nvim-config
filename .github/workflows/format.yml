@@ -22,7 +22,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           cargo install stylua
-          pnpm fmt
+          npm run fmt
 
       - name: Push changes
         continue-on-error: true
