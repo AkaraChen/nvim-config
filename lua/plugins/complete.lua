@@ -96,8 +96,8 @@ return {
 	},
 	{
 		'lukas-reineke/lsp-format.nvim',
-		config = function ()
+		config = function()
 			require('lsp-format').setup {}
-		end
-	}	
+		end,
+	},
 }

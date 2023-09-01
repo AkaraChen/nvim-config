@@ -5,5 +5,5 @@ require('lspconfig').jsonls.setup {
 			validate = { enable = true },
 		},
 	},
-	on_attach = require('lsp-format').on_attach
+	on_attach = require('lsp-format').on_attach,
 }
