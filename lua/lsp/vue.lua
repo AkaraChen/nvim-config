@@ -1,2 +1,3 @@
-local lsp = require 'lspconfig'
-lsp.volar.setup {}
+require 'lspconfig'.volar.setup {
+	on_attach = require('lsp-format').on_attach
+}
