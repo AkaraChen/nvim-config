@@ -366,4 +366,10 @@ return {
 			require('todo-comments').setup {}
 		end,
 	},
+	{
+		'rebelot/terminal.nvim',
+		config = function()
+			require('terminal').setup {}
+		end
+	}
 }
