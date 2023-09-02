@@ -391,5 +391,5 @@ return {
 		dependencies = {
 			'MunifTanjim/nui.nvim',
 		},
-	}
+	},
 }
