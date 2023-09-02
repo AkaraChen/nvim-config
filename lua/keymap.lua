@@ -11,11 +11,14 @@ vim.g.mapleader = ' '
 -- leader+space=telescope
 map('', '<leader>t', ':Telescope<CR>')
 
--- leader+f=format
-map('', '<leader>f', ':Format<CR>')
+-- leader+l=format
+map('', '<leader>l', ':Format<CR>')
 
 -- leader+g=live-gref
-map('', '<leader>g', ':lua require(\'telescope\').extensions.live_grep_args.live_grep_args()<CR>')
+map('', '<leader><S-g>', ':lua require(\'telescope\').extensions.live_grep_args.live_grep_args()<CR>')
 
--- leader+f=fuzzy-finder
-map('', '<leader>f', ':Telescope find_files<CR>')
+-- leader+shift+ff=fuzzy-finder
+map('', '<leader><S-f>', ':Telescope find_files<CR>')
+
+-- leader+f=find-and-replace-in-current-file
+map('', '<leader>f', ':SearchBoxIncSearch<CR>')

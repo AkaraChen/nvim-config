@@ -386,4 +386,10 @@ return {
 			require('terminal').setup {}
 		end,
 	},
+	{
+		'VonHeikemen/searchbox.nvim',
+		dependencies = {
+			'MunifTanjim/nui.nvim',
+		},
+	}
 }
