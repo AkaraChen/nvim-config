@@ -13,3 +13,9 @@ map('', '<leader>t', ':Telescope<CR>')
 
 -- leader+f=format
 map('', '<leader>f', ':Format<CR>')
+
+-- leader+g=live-gref
+map('', '<leader>g', ':lua require(\'telescope\').extensions.live_grep_args.live_grep_args()<CR>')
+
+-- leader+f=fuzzy-finder
+map('', '<leader>f', ':Telescope find_files<CR>')
