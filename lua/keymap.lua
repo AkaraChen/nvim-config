@@ -20,5 +20,11 @@ map('', '<leader><S-g>', ':lua require(\'telescope\').extensions.live_grep_args.
 -- leader+shift+ff=fuzzy-finder
 map('', '<leader><S-f>', ':Telescope find_files<CR>')
 
--- leader+f=find-and-replace-in-current-file
+-- leader+f=find-in-current-file
 map('', '<leader>f', ':SearchBoxIncSearch<CR>')
+
+-- leader+r=recent-files
+map('', '<leader>r', ':Telescope oldfiles<CR>')
+
+-- leader+shift+r=replace-in-current-file
+map('', '<leader><S-r>', ':SearchBoxReplace<CR>')
