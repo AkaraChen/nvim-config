@@ -19,6 +19,7 @@ jobs:
 
       - name: Run
         run: |
+          cargo install cargo-quickinstall
           cargo quickinstall stylua
           stylua ./
 
