@@ -241,6 +241,17 @@ return {
 			--   If not available, we use `mini` as the fallback
 			'rcarriga/nvim-notify',
 		},
+		config = function()
+			local banned_messages = { "No information available" }
+			vim.notify = function(msg, ...)
+				for _, banned in ipairs(banned_messages) do
+					if msg == banned then
+						return
+					end
+				end
+				return require("notify")(msg, ...)
+			end
+		end
 	},
 	{
 		'nvim-neo-tree/neo-tree.nvim',

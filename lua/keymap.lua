@@ -14,7 +14,7 @@ map('', '<leader>t', ':Telescope<CR>')
 -- leader+l=format
 map('', '<leader>l', ':Format<CR>')
 
--- leader+g=live-gref
+-- leader+shift+g=live-gref
 map('', '<leader><S-g>', ':lua require(\'telescope\').extensions.live_grep_args.live_grep_args()<CR>')
 
 -- leader+shift+ff=fuzzy-finder
@@ -28,3 +28,9 @@ map('', '<leader>r', ':Telescope oldfiles<CR>')
 
 -- leader+shift+r=replace-in-current-file
 map('', '<leader><S-r>', ':SearchBoxReplace<CR>')
+
+-- leader+g=goto-definition
+map('', '<leader>g', ':lua vim.lsp.buf.definition()<CR>')
+
+-- leader+k=lspsaga-hover-doc
+map('', '<leader>k', ':lua vim.lsp.buf.hover()<CR>')
