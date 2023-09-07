@@ -392,4 +392,14 @@ return {
 			'MunifTanjim/nui.nvim',
 		},
 	},
+	{
+		'jubnzv/virtual-types.nvim',
+	},
+	{
+		'echasnovski/mini.nvim',
+		version = '*',
+		config = function()
+			require('mini.tabline').setup()
+		end
+	},
 }
