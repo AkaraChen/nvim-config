@@ -242,8 +242,8 @@ return {
 			-- opts = opts or { routes = {} }
 			table.insert(opts.routes, {
 				filter = {
-					event = "notify",
-					find = "No information available",
+					event = 'notify',
+					find = 'No information available',
 				},
 				opts = { skip = true },
 			})
