@@ -230,9 +230,24 @@ return {
 	{
 		'folke/noice.nvim',
 		event = 'VeryLazy',
-		opts = {
-			-- add any options here
-		},
+		opts = function(_, opts)
+			local function setOpts()
+				if opts.routes == nil then
+					opts.routes = {}
+					return
+				end
+			end
+			setOpts()
+			-- opts = getOpts(opts)
+			-- opts = opts or { routes = {} }
+			table.insert(opts.routes, {
+				filter = {
+					event = "notify",
+					find = "No information available",
+				},
+				opts = { skip = true },
+			})
+		end,
 		dependencies = {
 			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			'MunifTanjim/nui.nvim',
@@ -241,17 +256,6 @@ return {
 			--   If not available, we use `mini` as the fallback
 			'rcarriga/nvim-notify',
 		},
-		config = function()
-			local banned_messages = { 'No information available' }
-			vim.notify = function(msg, ...)
-				for _, banned in ipairs(banned_messages) do
-					if msg == banned then
-						return
-					end
-				end
-				return require 'notify'(msg, ...)
-			end
-		end,
 	},
 	{
 		'nvim-neo-tree/neo-tree.nvim',
