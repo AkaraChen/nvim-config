@@ -411,10 +411,19 @@ return {
 		'jubnzv/virtual-types.nvim',
 	},
 	{
-		'echasnovski/mini.nvim',
-		version = '*',
+		"akinsho/bufferline.nvim",
 		config = function()
-			require('mini.tabline').setup()
+			require("bufferline").setup({
+				options = {
+					offsets = {
+						{
+							filetype = "neo-tree",
+							text = "󰈔 File",
+							highlight = "Directory",
+						},
+					},
+				},
+			})
 		end,
 	},
 }
