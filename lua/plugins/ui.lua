@@ -66,22 +66,22 @@ return {
 			vim.cmd 'Neotree'
 		end,
 	},
-    {
-        'nvim-lualine/lualine.nvim',
-        config = function()
-            require('lualine').setup {
-                options = {
-                    globalstatus = true,
+	{
+		'nvim-lualine/lualine.nvim',
+		config = function()
+			require('lualine').setup {
+				options = {
+					globalstatus = true,
 					component_separators = {},
 					section_separators = {},
 				},
-                extensions = {
-                    'neo-tree',
-                    'lazy',
-					'trouble'
-				}
+				extensions = {
+					'neo-tree',
+					'lazy',
+					'trouble',
+				},
 			}
-		end
+		end,
 	},
 	{
 		'stevearc/dressing.nvim',
