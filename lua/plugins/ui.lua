@@ -190,11 +190,11 @@ return {
 				dashboard.button('l', '󰒲 ' .. ' Lazy', ':Lazy<CR>'),
 				dashboard.button('q', ' ' .. ' Quit', ':qa<CR>'),
 			}
-			vim.api.nvim_create_autocmd("User", {
+			vim.api.nvim_create_autocmd('User', {
 				callback = function()
-					local stats = require("lazy").stats()
+					local stats = require('lazy').stats()
 					local ms = math.floor(stats.startuptime * 100) / 100
-					dashboard.section.footer.val = "󱐌 Lazy-loaded " .. stats.loaded .. " plugins in " .. ms .. "ms"
+					dashboard.section.footer.val = '󱐌 Lazy-loaded ' .. stats.loaded .. ' plugins in ' .. ms .. 'ms'
 					pcall(vim.cmd.AlphaRedraw)
 				end,
 			})

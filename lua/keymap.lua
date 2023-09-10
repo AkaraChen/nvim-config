@@ -34,3 +34,6 @@ map('', '<leader>g', ':lua vim.lsp.buf.definition()<CR>')
 
 -- leader+k=lspsaga-hover-doc
 map('', '<leader>k', ':lua vim.lsp.buf.hover()<CR>')
+
+-- leader+/=comment-using-nvim-comment
+map('', '<leader>/', ':CommentToggle<CR>')

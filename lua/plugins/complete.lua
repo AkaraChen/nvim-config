@@ -16,7 +16,7 @@ return {
 			{ 'hrsh7th/cmp-buffer' },
 			{ 'hrsh7th/cmp-cmdline' },
 			{ 'hrsh7th/cmp-path' },
-            { 'onsails/lspkind.nvim' },
+			{ 'onsails/lspkind.nvim' },
 			{ 'windwp/nvim-autopairs' },
 		},
 		config = function()
@@ -51,8 +51,8 @@ return {
 				formatting = {
 					format = lspkind.cmp_format { with_text = false, maxwidth = 50 },
 				},
-            }
-			
+			}
+
 			require('nvim-autopairs').setup()
 			local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 			cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
@@ -77,9 +77,9 @@ return {
 		end,
 	},
 	{
-		'numToStr/Comment.nvim',
+		'terrortylor/nvim-comment',
 		config = function()
-			require('Comment').setup()
+			require('nvim_comment').setup()
 		end,
 	},
 	{
