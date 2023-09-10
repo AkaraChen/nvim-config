@@ -6,9 +6,6 @@ return {
 		end,
 	},
 	{
-		'onsails/lspkind.nvim',
-	},
-	{
 		'neovim/nvim-lspconfig',
 	},
 	{
@@ -19,6 +16,8 @@ return {
 			{ 'hrsh7th/cmp-buffer' },
 			{ 'hrsh7th/cmp-cmdline' },
 			{ 'hrsh7th/cmp-path' },
+            { 'onsails/lspkind.nvim' },
+			{ 'windwp/nvim-autopairs' },
 		},
 		config = function()
 			-- Setup auto complete
@@ -52,7 +51,11 @@ return {
 				formatting = {
 					format = lspkind.cmp_format { with_text = false, maxwidth = 50 },
 				},
-			}
+            }
+			
+			require('nvim-autopairs').setup()
+			local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
+			cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
 			vim.cmd [[
   set completeopt=menuone,noinsert,noselect
@@ -72,18 +75,6 @@ return {
 		config = function()
 			require('gitsigns').setup()
 		end,
-	},
-	{
-		'windwp/nvim-autopairs',
-		config = function()
-			require('nvim-autopairs').setup()
-			local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
-			local cmp = require 'cmp'
-			cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
-		end,
-		dependencies = {
-			'hrsh7th/nvim-cmp',
-		},
 	},
 	{
 		'numToStr/Comment.nvim',
