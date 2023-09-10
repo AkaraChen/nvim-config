@@ -8,6 +8,7 @@ require 'lsp.json'
 require 'lsp.tailwind'
 require 'lsp.dart'
 require 'lsp.go'
+require 'lsp.cpp'
 
 vim.api.nvim_create_augroup('LspAttach_inlayhints', {})
 vim.api.nvim_create_autocmd('LspAttach', {
