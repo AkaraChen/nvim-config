@@ -16,17 +16,17 @@ local exclude_filetype = {
 
 local logo = [[
 
-      ___           ___           ___     
-     /\  \         /\__\         /\  \    
-    /::\  \       /:/  /        /::\  \   
-   /:/\:\  \     /:/__/        /:/\:\  \  
-  /::\~\:\  \   /::\__\____   /::\~\:\  \ 
+      ___           ___           ___
+     /\  \         /\__\         /\  \
+    /::\  \       /:/  /        /::\  \
+   /:/\:\  \     /:/__/        /:/\:\  \
+  /::\~\:\  \   /::\__\____   /::\~\:\  \
  /:/\:\ \:\__\ /:/\:::::\__\ /:/\:\ \:\__\
  \/__\:\/:/  / \/_|:|~~|~    \/_|::\/:/  /
-      \::/  /     |:|  |        |:|::/  / 
-      /:/  /      |:|  |        |:|\/__/  
-     /:/  /       |:|  |        |:|  |    
-     \/__/         \|__|         \|__|    
+      \::/  /     |:|  |        |:|::/  /
+      /:/  /      |:|  |        |:|\/__/
+     /:/  /       |:|  |        |:|  |
+     \/__/         \|__|         \|__|
 
 ]]
 
@@ -182,7 +182,29 @@ return {
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		config = function()
 			local dashboard = require 'alpha.themes.dashboard'
+
+			local function get_greeting()
+				local hour = os.date('*t').hour -- Gets the current hour
+
+				if hour >= 6 and hour < 12 then
+					return '  Good morning'
+				elseif hour >= 12 and hour < 18 then
+					return '  Good afternoon'
+				else
+					return '  Good night'
+				end
+			end
+			local datetime = os.date '  %Y-%m-%d'
+			local version = vim.version()
+			local greeting = '  ' .. get_greeting()
+			local nvim_version_info = '   v' ..
+			version.major .. '.' .. version.minor .. '.' .. version.patch .. ' '
+
+			local header_info = datetime .. greeting .. nvim_version_info
+
 			dashboard.section.header.val = vim.split(logo, '\n')
+			table.insert(dashboard.section.header.val, header_info)
+
 			dashboard.section.buttons.val = {
 				dashboard.button('f', ' ' .. ' Find file', ':Telescope find_files <CR>'),
 				dashboard.button('r', ' ' .. ' Recent files', ':Telescope oldfiles <CR>'),
@@ -190,11 +212,13 @@ return {
 				dashboard.button('l', '󰒲 ' .. ' Lazy', ':Lazy<CR>'),
 				dashboard.button('q', ' ' .. ' Quit', ':qa<CR>'),
 			}
+
 			vim.api.nvim_create_autocmd('User', {
 				callback = function()
 					local stats = require('lazy').stats()
 					local ms = math.floor(stats.startuptime * 100) / 100
-					dashboard.section.footer.val = '󱐌 Lazy-loaded ' .. stats.loaded .. ' plugins in ' .. ms .. 'ms'
+					dashboard.section.footer.val = '󱐌 Loaded ' ..
+					stats.loaded .. ' plugins in ' .. ms .. 'ms'
 					pcall(vim.cmd.AlphaRedraw)
 				end,
 			})
@@ -239,6 +263,7 @@ return {
 				},
 				animation = false,
 				exclude_ft = exclude_filetype,
+				no_name_title = 'Blank',
 			}
 		end,
 	},
