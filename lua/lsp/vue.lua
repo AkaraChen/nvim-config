@@ -1,3 +1,1 @@
-require('lspconfig').volar.setup {
-	on_attach = On_attach,
-}
+require('lspconfig').volar.setup {}

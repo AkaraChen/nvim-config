@@ -61,12 +61,6 @@ return {
 						'lsp',
 					},
 				},
-				mode_colors = {
-					i = '#d4be98',
-					n = '#84a598',
-					c = '#8fbf7f',
-					v = '#fc802d',
-				},
 				defaults = {
 					true_colors = true,
 					line_column = ' [%l/%L] :%c  ',
@@ -206,11 +200,13 @@ return {
 			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
 			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
 		},
-		init = function() vim.g.barbar_auto_setup = false end,
+		init = function()
+			vim.g.barbar_auto_setup = false
+		end,
 		opts = {
 			sidebar_filetypes = {
 				['neo-tree'] = { event = 'BufWipeout', text = '󰈔 File' },
-            },
+			},
 			animation = false,
 		},
 	},

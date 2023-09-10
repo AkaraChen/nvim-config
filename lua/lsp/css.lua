@@ -1,3 +1,1 @@
-require('lspconfig').cssls.setup {
-	on_attach = On_attach,
-}
+require('lspconfig').cssls.setup {}

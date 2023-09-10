@@ -7,5 +7,4 @@ lsp.lua_ls.setup {
 			},
 		},
 	},
-	on_attach = On_attach,
 }
