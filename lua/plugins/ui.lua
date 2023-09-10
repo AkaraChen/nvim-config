@@ -58,7 +58,7 @@ return {
 					left = { 'mode', 'branch', 'file_name' },
 					mid = { 'lsp_name' },
 					right = {
-						'lsp'
+						'lsp',
 					},
 				},
 				mode_colors = {
