@@ -14,6 +14,22 @@ local exclude_filetype = {
 	'neo-tree',
 }
 
+local logo = [[
+
+      ___           ___           ___     
+     /\  \         /\__\         /\  \    
+    /::\  \       /:/  /        /::\  \   
+   /:/\:\  \     /:/__/        /:/\:\  \  
+  /::\~\:\  \   /::\__\____   /::\~\:\  \ 
+ /:/\:\ \:\__\ /:/\:::::\__\ /:/\:\ \:\__\
+ \/__\:\/:/  / \/_|:|~~|~    \/_|::\/:/  /
+      \::/  /     |:|  |        |:|::/  / 
+      /:/  /      |:|  |        |:|\/__/  
+     /:/  /       |:|  |        |:|  |    
+     \/__/         \|__|         \|__|    
+
+]]
+
 return {
 	{
 		'folke/noice.nvim',
@@ -165,7 +181,25 @@ return {
 		event = 'VimEnter',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		config = function()
-			require('alpha').setup(require('alpha.themes.dashboard').config)
+			local dashboard = require 'alpha.themes.dashboard'
+			dashboard.section.header.val = vim.split(logo, '\n')
+			dashboard.section.buttons.val = {
+				dashboard.button('f', ' ' .. ' Find file', ':Telescope find_files <CR>'),
+				dashboard.button('r', ' ' .. ' Recent files', ':Telescope oldfiles <CR>'),
+				dashboard.button('g', ' ' .. ' Find text', ':Telescope live_grep <CR>'),
+				dashboard.button('l', '󰒲 ' .. ' Lazy', ':Lazy<CR>'),
+				dashboard.button('q', ' ' .. ' Quit', ':qa<CR>'),
+			}
+			vim.api.nvim_create_autocmd("User", {
+				callback = function()
+					local stats = require("lazy").stats()
+					local ms = math.floor(stats.startuptime * 100) / 100
+					dashboard.section.footer.val = "󱐌 Lazy-loaded " .. stats.loaded .. " plugins in " .. ms .. "ms"
+					pcall(vim.cmd.AlphaRedraw)
+				end,
+			})
+
+			require('alpha').setup(dashboard.config)
 		end,
 	},
 	{
