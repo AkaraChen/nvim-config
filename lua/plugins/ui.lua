@@ -1,3 +1,19 @@
+local exclude_filetype = {
+	'help',
+	'startify',
+	'dashboard',
+	'packer',
+	'neogitstatus',
+	'Trouble',
+	'alpha',
+	'lir',
+	'Outline',
+	'spectre_panel',
+	'toggleterm',
+	'qf',
+	'neo-tree',
+}
+
 return {
 	{
 		'folke/noice.nvim',
@@ -50,24 +66,22 @@ return {
 			vim.cmd 'Neotree'
 		end,
 	},
-	{
-		'tamton-aquib/staline.nvim',
-		config = function()
-			require('staline').setup {
-				sections = {
-					left = { 'mode', 'branch', 'file_name' },
-					mid = { 'lsp_name' },
-					right = {
-						'lsp',
-					},
+    {
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require('lualine').setup {
+                options = {
+                    globalstatus = true,
+					component_separators = {},
+					section_separators = {},
 				},
-				defaults = {
-					true_colors = true,
-					line_column = ' [%l/%L] :%c  ',
-					branch_symbol = ' ',
-				},
+                extensions = {
+                    'neo-tree',
+                    'lazy',
+					'trouble'
+				}
 			}
-		end,
+		end
 	},
 	{
 		'stevearc/dressing.nvim',
@@ -137,21 +151,7 @@ return {
 					lock_icon = '',
 				},
 
-				exclude_filetype = {
-					'help',
-					'startify',
-					'dashboard',
-					'packer',
-					'neogitstatus',
-					'Trouble',
-					'alpha',
-					'lir',
-					'Outline',
-					'spectre_panel',
-					'toggleterm',
-					'qf',
-					'neo-tree',
-				},
+				exclude_filetype = exclude_filetype,
 			}
 		end,
 	},
@@ -202,12 +202,13 @@ return {
 		},
 		init = function()
 			vim.g.barbar_auto_setup = false
+			require('barbar').setup {
+				sidebar_filetypes = {
+					['neo-tree'] = { event = 'BufWipeout', text = '󰈔 File' },
+				},
+				animation = false,
+				exclude_ft = exclude_filetype,
+			}
 		end,
-		opts = {
-			sidebar_filetypes = {
-				['neo-tree'] = { event = 'BufWipeout', text = '󰈔 File' },
-			},
-			animation = false,
-		},
 	},
 }
