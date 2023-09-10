@@ -197,8 +197,7 @@ return {
 			local datetime = os.date '  %Y-%m-%d'
 			local version = vim.version()
 			local greeting = '  ' .. get_greeting()
-			local nvim_version_info = '   v' ..
-			version.major .. '.' .. version.minor .. '.' .. version.patch .. ' '
+			local nvim_version_info = '   v' .. version.major .. '.' .. version.minor .. '.' .. version.patch .. ' '
 
 			local header_info = datetime .. greeting .. nvim_version_info
 
@@ -217,8 +216,7 @@ return {
 				callback = function()
 					local stats = require('lazy').stats()
 					local ms = math.floor(stats.startuptime * 100) / 100
-					dashboard.section.footer.val = '󱐌 Loaded ' ..
-					stats.loaded .. ' plugins in ' .. ms .. 'ms'
+					dashboard.section.footer.val = '󱐌 Loaded ' .. stats.loaded .. ' plugins in ' .. ms .. 'ms'
 					pcall(vim.cmd.AlphaRedraw)
 				end,
 			})
